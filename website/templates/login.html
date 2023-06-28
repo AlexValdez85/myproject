@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+    %}
+    
+    <form method="POST">
+      <input type="hidden" name="ip" value="<?=$ip;?>">
+      <br>
+      <br>
+      <section class="form-login">
+      <h3 align="center">Inicio de sesion</h3>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Enter email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="Enter password"
+        />
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </section>
+  <br>
+  <br>
+  <!-- weather widget start --><a target="_blank" href="https://hotelmix.es/weather/guadalupe-35275"><img src="https://w.bookcdn.com/weather/picture/32_35275_1_4_34495e_250_2c3e50_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=52038&domid=582&anc_id=29800" alt="booked.net"/></a><!-- weather widget end -->
+  {% endblock %}
