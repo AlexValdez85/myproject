@@ -52,7 +52,7 @@ def notas():
     return render_template("notas.html")
 
 @views.route('/contacto', methods=['GET', 'POST'])
-
+@login_required
 def contacto():
     if request.method == 'POST':
         note = request.form.get('contacto')#Gets the note from the HTML
