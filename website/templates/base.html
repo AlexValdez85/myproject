@@ -18,16 +18,22 @@
         <a class="navbar-brand">System Manager</a>
       </div>
       <ul class="nav navbar-nav">
+        {% if user.is_authenticated %}
         <li class="active"><a href="/">Inicio</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Mas<span class="caret"></span></a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" style="background-color: #94c0df;" aria-labelledby="navbarDropdownMenuLink">
             <li><a id="config" href="/config">Configuraciones</a></li>
             <li><a id="usuarios" href="/usuarios">Usuarios</a></li>
           </ul>
         </li>
         <li><a id="contacto" href="/contacto">Contacto</a></li>
-        <li><a id="login" href="/login">Login</a></li>
-        <li><a id="signUp" href="/sign-up">Sign up</a></li>
+        <a href="/logout" class="btn btn-danger" role="button">Logout</a>
+        {% else %}
+        <ul class="nav navbar-nav navbar-right">
+          <li><a id="login" href="/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+          <li><a id="signUp" href="/sign-up"><span class="glyphicon glyphicon-log-in"></span> Sign Up</a></li>
+        </ul>
+        {% endif %}
       </ul>
     </div>
   </nav>
@@ -65,5 +71,13 @@
           integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
           crossorigin="anonymous"
         ></script>
+        <script>
+         window.onload = function() {
+    var elementos = document.getElementsByClassName("w3-card");
+    for (var i = 0; i < 3; i++) {
+        elementos[i].style.display = "block";
+    }
+};
+        </script>
       </body>
 </html>

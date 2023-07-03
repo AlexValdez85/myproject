@@ -107,3 +107,12 @@ p {
       display: block;
     }
   }
+
+  .w3-card {
+    display: none;
+}
+
+.dropdown {
+ 
+    color: aqua;
+}
