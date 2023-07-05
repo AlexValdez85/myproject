@@ -2,4 +2,11 @@
 
 {% block content %}
 
+<h1>User List</h1>
+    <ul>
+        {% for user in User %}
+        <li>{{ User.name }} - {{ User.email }}</li>
+        {% endfor %}
+    </ul>
+
 {% endblock %}

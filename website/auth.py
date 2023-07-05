@@ -67,3 +67,7 @@ def logout():
     logout_user()
     return redirect(url_for('auth.login'))
 
+@auth.route('/usuarios')
+def usuarios():
+    users = User.query.all()
+    return render_template('usuarios.html', users=users)
