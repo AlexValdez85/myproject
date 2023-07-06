@@ -3,22 +3,25 @@
 {% block content %}
     <div class="w3-container w3-teal">
       <h1 align="center">Panel de Administración</h1>
-    </div>
-    
-    <div class="w3-row-padding w3-margin-top">
-      <div class="w3-third">
-        <div class="w3-card">
-          {% for row in lista %}
-            <a href="{{ url_for( row )}}">
-            <img src="https://static.vecteezy.com/system/resources/previews/010/925/499/non_2x/balance-sheet-cartoon-web-icon-accounting-process-finance-analyst-calculating-tools-financial-consulting-idea-bookkeeping-service-flat-design-modern-illustration-vector.jpg" style="width:90%">
-            <div class="w3-container">
-              <h5>{{ row }}</h5>              
-            </div>
-             {% endfor %}
+    </div> 
+      <div class="w3-row- w3-margin-top">
+        {% for columna in lista %}
+        <div class="w3-third">
+          <div class="w3-card">
+            {% for elemento in columna %}
+            <a href="{{ url_for(elemento) }}">
+              <img src="{{ obtener_imagen(elemento) }}" style="width:90%">
+              <div class="w3-container">
+                <h5>{{ elemento }}</h5>
+              </div>
+            </a>
+            {% endfor %}
           </div>
-          
         </div>
-      </div>      
+        {% endfor %}
+      </div>
+      
+         
     
     <!--<div class="w3-row-padding w3-margin-top">
       <div class="w3-third">
@@ -84,5 +87,4 @@
       </div>
     </div>
   -->
-  </div>
 {% endblock %}
