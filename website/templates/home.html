@@ -4,22 +4,36 @@
     <div class="w3-container w3-teal">
       <h1 align="center">Panel de Administración</h1>
     </div> 
-      <div class="w3-row- w3-margin-top">
-        {% for columna in lista %}
-        <div class="w3-third">
-          <div class="w3-card">
-            {% for elemento in columna %}
-            <a href="{{ url_for(elemento) }}">
-              <img src="{{ obtener_imagen(elemento) }}" style="width:90%">
-              <div class="w3-container">
-                <h5>{{ elemento }}</h5>
-              </div>
-            </a>
-            {% endfor %}
-          </div>
+    <div class="w3-row- w3-margin-top">
+      {% for columna in lista %}
+      <div class="w3-third">
+        {% for elemento in columna %}
+        <div class="w3-card w3-margin-bottom w3-margin-right">
+          <a href="{{ url_for(elemento) }}">
+            {% if elemento == 'views.contabilidad' %}
+            <img src="/static/imagenes/contabilidad.png" style="width:80%">
+            {% elif elemento == 'views.notas' %}
+            <img src="/static/imagenes/nota-de-credito.png" style="width:100%">
+            {% elif elemento == 'views.contacto' %}
+            <img src="/static/imagenes/contacto.jpg" style="width:80%">
+            {% elif elemento == 'views.usuarios' %}
+            <img src="/static/imagenes/usuarios.png" style="width:70%">
+            {% elif elemento == 'views.config' %}
+            <img src="/static/imagenes/config.png" style="width:78%">
+            {% elif elemento == 'views.digital' %}
+            <img src="/static/imagenes/digital.jpg" style="width:89%">
+            {% else %}
+            <img src="ruta/imagen_predeterminada.jpg" style="width:90%">
+            {% endif %}
+            <div class="w3-container">
+              <h5>{{ elemento }}</h5>
+            </div>
+          </a>
         </div>
         {% endfor %}
       </div>
+      {% endfor %}
+    </div>
       
          
     

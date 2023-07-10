@@ -16,17 +16,17 @@ def home():
 def obtener_imagen(elemento):
     # Lógica para obtener la imagen según el elemento
     if elemento == 'views.contabilidad':
-        return 'https://static.vecteezy.com/system/resources/previews/010/925/499/non_2x/balance-sheet-cartoon-web-icon-accounting-process-finance-analyst-calculating-tools-financial-consulting-idea-bookkeeping-service-flat-design-modern-illustration-vector.jpg'
+        return '/static/imagenes/contabilidad.png'
     elif elemento == 'views.notas':
-        return 'https://www.chipax.com/wp-content/uploads/2022/04/nota-de-credito.png'
+        return '/static/imagenes/nota-de-credito.png'
     elif elemento == 'views.contacto':
-        return 'https://media.istockphoto.com/id/1268586504/es/vector/icono-de-contacto-para-computadora-sitio-web-y-aplicaciones-m%C3%B3viles.jpg?s=170667a&w=0&k=20&c=cX0NjxacOgyJYLudCjh9RnckQM5Cb_-k47t-6LLQUy0='
+        return '/static/imagenes/contacto.jpg'
     elif elemento == 'views.usuarios':
-        return 'https://cdn.icon-icons.com/icons2/272/PNG/512/Contacts_30028.png'
+        return '/static/imagenes/usuarios.png'
     elif elemento == 'views.config':
-        return 'https://tumovilseguro.unam.mx/pluginfile.php/60/course/section/8/configuracion.png'
+        return '/static/imagenes/config.png'
     elif elemento == 'views.digital':
-        return 'https://www.muycomputerpro.com/wp-content/uploads/2017/05/digitalizacion-1.jpg'
+        return '/static/imagenes/digital.jpg'
     else:
         return 'ruta/imagen_predeterminada.jpg'
 
