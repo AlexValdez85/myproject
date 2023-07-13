@@ -8,27 +8,11 @@ views = Blueprint('views', __name__)
 @login_required
 def home():
     lista = ['views.contabilidad', 'views.notas', 'views.contacto', 'views.usuarios', 'views.config', 'views.digital']
-    context = {'lista':lista, 'user':current_user}
     columnas_ordenadas = [lista[i:i+2] for i in range(0, len(lista), 2)] 
-    context['lista'] = columnas_ordenadas
-    return render_template("home.html", lista=columnas_ordenadas, user=current_user)
+    #context['lista'] = columnas_ordenadas
+    context = {'lista':lista, 'user':current_user}
+    return render_template("home.html", **context)
 
-def obtener_imagen(elemento):
-    # Lógica para obtener la imagen según el elemento
-    if elemento == 'views.contabilidad':
-        return '/static/imagenes/contabilidad.png'
-    elif elemento == 'views.notas':
-        return '/static/imagenes/nota-de-credito.png'
-    elif elemento == 'views.contacto':
-        return '/static/imagenes/contacto.jpg'
-    elif elemento == 'views.usuarios':
-        return '/static/imagenes/usuarios.png'
-    elif elemento == 'views.config':
-        return '/static/imagenes/config.png'
-    elif elemento == 'views.digital':
-        return '/static/imagenes/digital.jpg'
-    else:
-        return 'ruta/imagen_predeterminada.jpg'
 
 @views.route('/digital', methods=['GET', 'POST'])
 @login_required
