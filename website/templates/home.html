@@ -4,7 +4,6 @@
 <div class="w3-container w3-teal">
   <h1 align="center">Panel de Administración</h1>
 </div>
-
 <div class="w3-row- w3-margin-top">
   {% for elemento in lista %}
   {% if loop.index % 2 == 1 %}
@@ -23,7 +22,7 @@
       {% elif elemento == 'views.config' %}
       <img src="/static/imagenes/config.png" style="width:78%">
       {% elif elemento == 'views.digital' %}
-      <img src="/static/imagenes/digital.jpg" style="width:89%">
+      <img src="/static/imagenes/digital.jpg" style="width:88%">
       {% endif %}
       <div class="w3-container">
         <h5>{{ elemento }}</h5>
@@ -35,5 +34,4 @@
   {% endif %}
   {% endfor %}
 </div>
-
 {% endblock %}
